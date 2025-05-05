@@ -1,0 +1,49 @@
+{
+    "content": [
+        {
+            "type": "ayet",
+            "text": "Ey iman edenler! Oruç sizden önce gelip geçmiş ümmetlere farz kılındığı gibi size de farz kılındı. Umulur ki korunursunuz.",
+            "source": "Bakara Suresi, 2:183",
+            "translation": {
+                "en": "O you who believe! Fasting is prescribed for you as it was prescribed for those before you, that you may become righteous.",
+                "ar": "يَا أَيُّهَا الَّذِينَ آمَنُوا كُتِبَ عَلَيْكُمُ الصِّيَامُ كَمَا كُتِبَ عَلَى الَّذِينَ مِن قَبْلِكُمْ لَعَلَّكُمْ تَتَّقُونَ"
+            }
+        },
+        {
+            "type": "ayet",
+            "text": "O sayılı günler, insanlar için bir hidayet rehberi, doğru yolun ve hak ile batılı birbirinden ayırmanın apaçık delilleri olarak Kur'an'ın kendisinde indirildiği Ramazan ayıdır.",
+            "source": "Bakara Suresi, 2:185",
+            "translation": {
+                "en": "The month of Ramadan [is that] in which was revealed the Quran, a guidance for the people and clear proofs of guidance and criterion.",
+                "ar": "شَهْرُ رَمَضَانَ الَّذِي أُنزِلَ فِيهِ الْقُرْآنُ هُدًى لِّلنَّاسِ وَبَيِّنَاتٍ مِّنَ الْهُدَىٰ وَالْفُرْقَانِ"
+            }
+        },
+        {
+            "type": "ayet",
+            "text": "Kim bir iyilik yaparsa ona on katı vardır. Kim de bir kötülük yaparsa o da sadece o kötülüğün misliyle cezalandırılır ve onlara haksızlık edilmez.",
+            "source": "En'am Suresi, 6:160",
+            "translation": {
+                "en": "Whoever comes [on the Day of Judgement] with a good deed will have ten times the like thereof [to his credit], and whoever comes with an evil deed will not be recompensed except the like thereof; and they will not be wronged.",
+                "ar": "مَن جَاءَ بِالْحَسَنَةِ فَلَهُ عَشْرُ أَمْثَالِهَا وَمَن جَاءَ بِالسَّيِّئَةِ فَلَا يُجْزَىٰ إِلَّا مِثْلَهَا وَهُمْ لَا يُظْلَمُونَ"
+            }
+        },
+        {
+            "type": "ayet",
+            "text": "Şüphesiz Allah, adaleti, iyilik yapmayı, yakınlara yardım etmeyi emreder. Çirkin işleri, fenalık ve azgınlığı da yasaklar. O, düşünüp tutasınız diye size öğüt verir.",
+            "source": "Nahl Suresi, 16:90",
+            "translation": {
+                "en": "Indeed, Allah orders justice and good conduct and giving to relatives and forbids immorality and bad conduct and oppression. He admonishes you that perhaps you will be reminded.",
+                "ar": "إِنَّ اللَّهَ يَأْمُرُ بِالْعَدْلِ وَالْإِحْسَانِ وَإِيتَاءِ ذِي الْقُرْبَىٰ وَيَنْهَىٰ عَنِ الْفَحْشَاءِ وَالْمُنكَرِ وَالْبَغْيِ يَعِظُكُمْ لَعَلَّكُمْ تَذَكَّرُونَ"
+            }
+        },
+        {
+            "type": "ayet",
+            "text": "Kim zerre miktarı hayır yapmışsa onu görür. Kim de zerre miktarı şer işlemişse onu görür.",
+            "source": "Zilzal Suresi, 99:7-8",
+            "translation": {
+                "en": "So whoever does an atom's weight of good will see it, And whoever does an atom's weight of evil will see it.",
+                "ar": "فَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُ وَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ شَرًّا يَرَهُ"
+            }
+        }
+    ]
+} 

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <!-- Temel Meta Etiketleri -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Namaz Vakitleri - Tam Ekran</title>
+
+    <!-- SEO Meta Etiketleri -->
+    <meta name="description" content="Namaz Vakitleri - Günlük namaz vakitleri ve Ramazan'a özel içerikler">
+    <meta name="keywords" content="ramazan, imsakiye, namaz vakitleri, iftar, sahur">
+    <meta name="author" content="Namaz Vakitleri">
+
+    <!-- Open Graph Meta Etiketleri -->
+    <meta property="og:title" content="Namaz Vakitleri - Tam Ekran">
+    <meta property="og:description" content="Günlük namaz vakitleri ve Ramazan'a özel içerikler">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://imsakiye.yigitgulyurt.com">
+    <meta property="og:image" content="https://imsakiye.yigitgulyurt.com/static/icons/og-image.jpg">
+
+    <!-- Twitter Meta Etiketleri -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Namaz Vakitleri - Tam Ekran">
+    <meta name="twitter:description" content="Günlük namaz vakitleri ve Ramazan'a özel içerikler">
+    <meta name="twitter:image" content="https://imsakiye.yigitgulyurt.com/static/icons/og-image.jpg">
+
+    <!-- Favicon ve App Icons -->
+    <link rel="icon" type="image/x-icon" href="/static/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png">
+
+    <!-- Tema ve Görünüm -->
+    <meta name="theme-color" content="#121212">
+    <meta name="msapplication-navbutton-color" content="#121212">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Stil Dosyaları -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+
+    <!-- Progressier -->
+    <script src="/progressier.js"></script>
+    <script>
+        progressier({
+            theme: 'dark',
+            color: '#121212',
+            logo: '/static/icons/favicon.ico'
+        });
+    </script>
+
+    <script> type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Website",
+            "name": "Namaz Vakitleri",
+            "url": "https://imsakiye.yigitgulyurt.com"
+        }
+    </script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+              navigator.serviceWorker.register('/sw.js')
+                .then(registration => {
+                  console.log('ServiceWorker registration successful');
+                })
+                .catch(err => {
+                  console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+          }
+        </script>
+
+    <style>
+        :root {
+            --primary-color: #FFC107;
+            --secondary-color: #1E1E1E;
+            --background-color: #121212;
+            --text-color: #FFFFFF;
+            --hover-color: #2D2D2D;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .button {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            padding: 12px 25px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all var(--transition-speed);
+            box-shadow: var(--card-shadow);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: 300px;
+            justify-content: center;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .button i {
+            font-size: 1.2em;
+        }
+
+        .button span {
+            font-size: 1em;
+        }
+
+        .imsakiye-container {
+            background-color: var(--secondary-color);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 20px auto;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .imsakiye-container h2 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        .imsakiye-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .imsakiye-box {
+            background: linear-gradient(145deg, var(--secondary-color), var(--hover-color));
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all var(--transition-speed);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .imsakiye-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .imsakiye-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .imsakiye-box span {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--text-color);
+        }
+
+        .countdown {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: rgba(255, 193, 7, 0.1);
+            border-radius: 8px;
+            font-size: 1.2em;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .header-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .button {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .imsakiye-container {
+                padding: 20px;
+            }
+
+            .imsakiye-box {
+                padding: 20px;
+            }
+        }
+
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--background-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.3s ease-out;
+        }
+
+        .loading-screen.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--secondary-color);
+            border-top: 5px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            color: var(--text-color);
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            padding: 20px;
+        }
+        .overlay-content {
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        
+        .social-link {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        
+        .social-link a {
+            color: #FFC107;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .social-link a:hover {
+            color: #FFD54F;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <div class="overlay-content">
+            Sitemizle 18 Şubat 2026 tarihinde sizlerle buluşuyoruz
+            <div class="social-link">
+                <a href="https://yigitgulyurt.com/" target="_blank" rel="noopener noreferrer">yigitgulyurt.com</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="loading-screen">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Yükleniyor...</div>
+    </div>
+
+    <div class="container">
+        <div class="imsakiye-container" id="prayerTimes">
+            <h2><i class="fas fa-city"></i> {{ sehir }}</h2>
+            <div class="imsakiye-grid">
+                <div class="imsakiye-box">
+                    <h3>İmsak</h3>
+                    <span id="imsak">{{ vakitler.imsak }}</span>
+                    <div class="countdown" id="imsak-countdown"></div>
+                </div>
+                <div class="imsakiye-box">
+                    <h3>Güneş</h3>
+                    <span id="gunes">{{ vakitler.gunes }}</span>
+                    <div class="countdown" id="gunes-countdown"></div>
+                </div>
+                <div class="imsakiye-box">
+                    <h3>Öğle</h3>
+                    <span id="ogle">{{ vakitler.ogle }}</span>
+                    <div class="countdown" id="ogle-countdown"></div>
+                </div>
+                <div class="imsakiye-box">
+                    <h3>İkindi</h3>
+                    <span id="ikindi">{{ vakitler.ikindi }}</span>
+                    <div class="countdown" id="ikindi-countdown"></div>
+                </div>
+                <div class="imsakiye-box">
+                    <h3>Akşam</h3>
+                    <span id="aksam">{{ vakitler.aksam }}</span>
+                    <div class="countdown" id="aksam-countdown"></div>
+                </div>
+                <div class="imsakiye-box">
+                    <h3>Yatsı</h3>
+                    <span id="yatsi">{{ vakitler.yatsi }}</span>
+                    <div class="countdown" id="yatsi-countdown"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-buttons">
+            <a href="/sehir-secimi" class="button">
+                <i class="fas fa-exchange-alt"></i>
+                <span id="change-city-text">Şehir Değiştir</span>
+            </a>
+            <a href="/sehir/{{ sehir }}" class="button">
+                <i class="fas fa-compress"></i>
+                <span id="exit-fullscreen-text">Tam Ekrandan Çık</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        let translations = {};
+        let mevcutSehir = "{{ sehir }}";
+        let namazVakitleri = {{ vakitler|tojson|safe }};
+
+        async function loadTranslations() {
+            try {
+                const response = await fetch('/static/translations.json');
+                translations = await response.json();
+                const preferredLang = localStorage.getItem('preferred_language') || 'tr';
+                updateLanguage(preferredLang);
+            } catch (error) {
+                console.error('Translations loading error:', error);
+            }
+        }
+
+        async function namazVakitleriniYukle() {
+            try {
+                const bugunResponse = await fetch(`/api/namaz_vakitleri?sehir=${mevcutSehir}`);
+                const bugunData = await bugunResponse.json();
+                const yarin = new Date();
+// eğer alltaki 0 ı 1 yaparsak yarının vakitlerini alırız. ramazan için 1 yapıyoruz. normalde 0 yapıyoruz.
+                yarin.setDate(yarin.getDate() + 0);
+                const yarinResponse = await fetch(`/api/namaz_vakitleri?sehir=${mevcutSehir}&date=${yarin.toISOString().split('T')[0]}`);
+                const yarinData = await yarinResponse.json();
+                
+                namazVakitleri = {
+                    ...bugunData.vakitler,
+                    'imsak': yarinData.vakitler.imsak
+                };
+                
+                // DOM'u güncelle
+                document.getElementById('imsak').textContent = namazVakitleri.imsak;
+                document.getElementById('gunes').textContent = namazVakitleri.gunes;
+                document.getElementById('ogle').textContent = namazVakitleri.ogle;
+                document.getElementById('ikindi').textContent = namazVakitleri.ikindi;
+                document.getElementById('aksam').textContent = namazVakitleri.aksam;
+                document.getElementById('yatsi').textContent = namazVakitleri.yatsi;
+                
+                // Geri sayımı güncelle
+                updateCountdowns();
+            } catch (error) {
+                console.error('Namaz vakitleri yüklenemedi:', error);
+            }
+        }
+
+        function updateLanguage(lang) {
+            // Buton metinlerini güncelle
+            const changeCityText = document.getElementById('change-city-text');
+            const exitFullscreenText = document.getElementById('exit-fullscreen-text');
+            
+            if (changeCityText) {
+                changeCityText.textContent = translations[lang]?.changeCity || 'Şehir Değiştir';
+            }
+            
+            if (exitFullscreenText) {
+                exitFullscreenText.textContent = translations[lang]?.exitFullscreen || 'Tam Ekrandan Çık';
+            }
+
+            // Vakit etiketlerini güncelle
+            const imsakLabel = document.querySelector('.imsakiye-box:nth-child(1) h3');
+            const aksamLabel = document.querySelector('.imsakiye-box:nth-child(2) h3');
+            
+            if (imsakLabel) {
+                imsakLabel.innerHTML = `<i class="fas fa-sun"></i> ${translations[lang]?.imsak || 'İmsak Vakti'}:`;
+            }
+            
+            if (aksamLabel) {
+                aksamLabel.innerHTML = `<i class="fas fa-moon"></i> ${translations[lang]?.aksam || 'Akşam Vakti'}:`;
+            }
+        }
+
+        function updateCountdowns() {
+            const now = new Date();
+            
+            Object.entries(namazVakitleri).forEach(([vakit, saat]) => {
+                if (!saat) return;
+                
+                const [hours, minutes] = saat.split(':').map(Number);
+                const vakitDate = new Date();
+                vakitDate.setHours(hours, minutes, 0, 0);
+                
+                const countdownEl = document.getElementById(`${vakit}-countdown`);
+                if (!countdownEl) return;
+
+                // Bugünün vakti geçmişse
+                if (vakitDate < now) {
+                    // İmsak vakti için özel durum
+                    if (vakit === 'imsak') {
+// eğer alltaki 0 ı 1 yaparsak yarının vakitlerini alırız. ramazan için 1 yapıyoruz. normalde 0 yapıyoruz.
+                        vakitDate.setDate(vakitDate.getDate() + 0);
+                    } else {
+                        countdownEl.textContent = 'Vakit geçti';
+                        return;
+                    }
+                }
+                
+                const timeDiff = vakitDate - now;
+                
+                if (timeDiff < 0) {
+                    countdownEl.textContent = 'Vakit geçti';
+                    return;
+                }
+                
+                const hours_remaining = Math.floor(timeDiff / (1000 * 60 * 60));
+                const minutes_remaining = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds_remaining = Math.floor((timeDiff % (1000 * 60)) / 1000);
+                
+                countdownEl.textContent = `${String(hours_remaining).padStart(2, '0')}:${String(minutes_remaining).padStart(2, '0')}:${String(seconds_remaining).padStart(2, '0')}`;
+            });
+        }
+
+        // Sayfa yüklendiğinde
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Minimum bekleme süresi
+            const minimumWaitTime = new Promise(resolve => setTimeout(resolve, 500));
+            
+            try {
+                // Çevirileri ve namaz vakitlerini yükle
+                await Promise.all([
+                    loadTranslations(),
+                    namazVakitleriniYukle()
+                ]);
+
+                // İlk geri sayımı başlat
+                updateCountdowns();
+                
+                // Periyodik güncellemeler
+                setInterval(updateCountdowns, 1000);
+                setInterval(namazVakitleriniYukle, 60000);
+
+                // Minimum bekleme süresini bekle
+                await minimumWaitTime;
+
+                // Loading screen'i kaldır
+                const loadingScreen = document.querySelector('.loading-screen');
+                loadingScreen.classList.add('fade-out');
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                }, 300);
+            } catch (error) {
+                console.error('Yükleme hatası:', error);
+                await minimumWaitTime;
+                
+                const loadingScreen = document.querySelector('.loading-screen');
+                loadingScreen.classList.add('fade-out');
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                }, 300);
+            }
+        });
+    </script>
+</body>
+</html> 

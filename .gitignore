@@ -1,0 +1,6 @@
+instance/
+__pycache__/
+progressier.js
+robots.txt
+telegram_bot.db
+static/sw.js 

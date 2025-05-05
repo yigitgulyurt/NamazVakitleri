@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <!-- Temel Meta Etiketleri -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Namaz Vakitleri</title>
+
+    <!-- SEO Meta Etiketleri -->
+    <meta name="description" content="Namaz Vakitleri - Günlük namaz vakitleri ve Ramazan'a özel içerikler">
+    <meta name="keywords" content="ramazan, imsakiye, namaz vakitleri, iftar, sahur">
+    <meta name="author" content="Namaz Vakitleri">
+
+    <!-- Open Graph Meta Etiketleri -->
+    <meta property="og:title" content="Namaz Vakitleri">
+    <meta name="og:site_name" content="Namaz Vakitleri">
+    <meta name="og:site_description" content="Günlük namaz vakitleri ve Ramazan imsakiyesi">
+    <meta property="og:description" content="Günlük namaz vakitleri ve Ramazan imsakiyesi">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://imsakiye.yigitgulyurt.com">
+    <meta property="og:image" content="https://imsakiye.yigitgulyurt.com/static/icons/og-image.jpg">
+
+    <!-- Twitter Meta Etiketleri -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Namaz Vakitleri">
+    <meta name="twitter:description" content="Günlük namaz vakitleri ve Ramazan'a özel içerikler">
+    <meta name="twitter:image" content="https://imsakiye.yigitgulyurt.com/static/icons/og-image.jpg">
+
+    <!-- Favicon ve App Icons -->
+    <link rel="icon" type="image/x-icon" href="/static/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png">
+
+    <!-- Tema ve Görünüm -->
+    <meta name="theme-color" content="#121212">
+    <meta name="msapplication-navbutton-color" content="#121212">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Stil Dosyaları -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+
+    <!-- Progressier -->
+    <script src="/progressier.js"></script>
+    <script>
+        progressier({
+            theme: 'dark',
+            color: '#121212',
+            logo: '/static/icons/favicon.ico'
+        });
+    </script>
+
+    <script> type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Website",
+            "name": "Namaz Vakitleri",
+            "url": "https://imsakiye.yigitgulyurt.com"
+        }
+    </script>
+
+    <script defer src="https://progressier.app/iKIJtOmAouyj9q4nBvcF/script.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta name="theme-color" content="#121212">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='icons/icon-152x152.png') }}">
+        
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+              navigator.serviceWorker.register('/sw.js')
+                .then(registration => {
+                  console.log('ServiceWorker registration successful');
+                })
+                .catch(err => {
+                  console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+          }
+        </script>
+        
+    <style>
+        :root {
+            --primary-color: #FFC107;
+            --secondary-color: #1E1E1E;
+            --background-color: #121212;
+            --text-color: #FFFFFF;
+            --hover-color: #2D2D2D;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background-color: var(--secondary-color);
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .search-container {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 10px;
+            background-color: var(--hover-color);
+            color: var(--text-color);
+            transition: all var(--transition-speed);
+            box-shadow: var(--card-shadow);
+        }
+
+        .search-box:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px var(--primary-color);
+            background-color: var(--secondary-color);
+        }
+
+        .search-box::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .category-tab {
+            padding: 10px 20px;
+            background-color: var(--secondary-color);
+            border: none;
+            border-radius: 8px;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: all var(--transition-speed);
+            font-weight: 600;
+        }
+
+        .category-tab.active {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+        }
+
+        .category-tab:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--card-shadow);
+        }
+
+        .category-content {
+            display: none;
+            padding: 10px;
+            background-color: var(--secondary-color);
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .category-content.active {
+            display: block;
+        }
+
+        .city-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 15px;
+            padding: 10px;
+        }
+
+        .city-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100px;
+            background: linear-gradient(145deg, var(--secondary-color), var(--hover-color));
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all var(--transition-speed);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: var(--card-shadow);
+        }
+
+        .city-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(145deg, var(--hover-color), var(--secondary-color));
+        }
+
+        .city-card:active {
+            transform: translateY(-2px);
+        }
+
+        .city-name {
+            font-size: 1em;
+            margin-bottom: 6px;
+            color: var(--text-color);
+        }
+
+        .region-title {
+            color: var(--primary-color);
+            font-size: 1.3em;
+            margin: 15px 0 5px;
+            padding-left: 15px;
+            transition: opacity var(--transition-speed);
+        }
+
+        .region-title.hidden {
+            display: none;
+        }
+
+        .vakit-bilgisi {
+            font-size: 0.8em;
+            color: var(--primary-color);
+            margin-top: 6px;
+            line-height: 1.3;
+        }
+
+        .empty-region {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .category-tabs {
+                flex-direction: column;
+            }
+
+            .category-tab {
+                width: 100%;
+            }
+
+            .city-grid {
+                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+                gap: 10px;
+                padding: 5px;
+            }
+
+            .city-card {
+                padding: 10px;
+                font-size: 0.85em;
+                min-height: 90px;
+            }
+        }
+
+        /* Dil seçimi için stiller */
+        /*
+        .language-flags {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            background: rgba(30, 30, 30, 0.9);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .flag-button {
+            width: 40px;
+            height: 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .flag-button:hover {
+            transform: scale(1.1);
+        }
+
+        .flag-tr {
+            background-image: url('/static/images/Turkey.png');
+        }
+
+        .flag-en {
+            background-image: url('/static/images/United_Kingdom.png');
+        }
+        */
+        
+        /* Loading Screen Styles */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--background-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .loading-screen.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-content {
+            text-align: center;
+            color: var(--primary-color);
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--secondary-color);
+            border-top: 5px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            font-size: 1.2em;
+            margin-top: 20px;
+            opacity: 0.8;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            padding: 20px;
+        }
+        .overlay-content {
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        
+        .social-link {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        
+        .social-link a {
+            color: #FFC107;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .social-link a:hover {
+            color: #FFD54F;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<!--
+    <div class="overlay">
+        <div class="overlay-content">
+            Sitemizle 18 Şubat 2026 tarihinde sizlerle buluşuyoruz
+            <div class="social-link">
+                <a href="https://yigitgulyurt.com/" target="_blank" rel="noopener noreferrer">yigitgulyurt.com</a>
+            </div>
+        </div>
+    </div>
+--> 
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Yükleniyor...</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-mosque"></i> Namaz Vakitleri</h1>
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="Şehir veya Ülke ara...">
+            </div>
+        </div>
+
+        <div class="category-tabs">
+        <!-- <button class="category-tab active" data-category="biggest">Büyük Şehirler</button> -->
+            <button class="category-tab" data-category="turkey">Türkiye</button>
+            <button class="category-tab" data-category="countries">Ülkeler</button>
+        </div>
+
+        <div class="category-content active" id="biggest">
+            <div class="city-grid" id="buyuk-sehirler-grid"></div>
+        </div>
+
+        <div class="category-content" id="turkey">
+            <h2 class="region-title" data-region="marmara">Marmara Bölgesi</h2>
+            <div class="city-grid" id="Marmara"></div>
+
+            <h2 class="region-title" data-region="ege">Ege Bölgesi</h2>
+            <div class="city-grid" id="Ege"></div>
+
+            <h2 class="region-title" data-region="akdeniz">Akdeniz Bölgesi</h2>
+            <div class="city-grid" id="Akdeniz"></div>
+
+            <h2 class="region-title" data-region="icanadolu">İç Anadolu Bölgesi</h2>
+            <div class="city-grid" id="IcAnadolu"></div>
+
+            <h2 class="region-title" data-region="karadeniz">Karadeniz Bölgesi</h2>
+            <div class="city-grid" id="Karadeniz"></div>
+
+            <h2 class="region-title" data-region="doguanadolu">Doğu Anadolu Bölgesi</h2>
+            <div class="city-grid" id="DoguAnadolu"></div>
+
+            <h2 class="region-title" data-region="guneydoguanadolu">Güneydoğu Anadolu Bölgesi</h2>
+            <div class="city-grid" id="GuneydoguAnadolu"></div>
+        </div>
+
+        <div class="category-content" id="countries">
+            <div class="city-grid" id="countries-grid"></div>
+        </div>
+    </div>
+
+        <!--
+    lazım olana kadar yorum satırı
+    <div class="language-flags">
+        <button class="flag-button flag-tr" onclick="changeLanguage('tr')" title="Türkçe"></button>
+        <button class="flag-button flag-en" onclick="changeLanguage('en')" title="English"></button>
+        </div>
+        -->
+
+    <script>
+        // Türkiye'deki şehirler ve bölgeleri
+        const turkiyeSehirleri = {
+            "Marmara": ["İstanbul", "Bursa", "Kocaeli", "Bilecik", "Balıkesir", "Çanakkale", "Edirne", "Kırklareli", "Tekirdağ", "Yalova", "Sakarya", "Düzce"],
+            "Ege": ["İzmir", "Aydın", "Denizli", "Muğla", "Manisa", "Afyonkarahisar", "Kütahya", "Uşak"],
+            "Akdeniz": ["Antalya", "Adana", "Mersin", "Hatay", "Osmaniye", "Kahramanmaraş", "Gaziantep", "Kilis"],
+            "IcAnadolu": ["Ankara", "Konya", "Kayseri", "Eskişehir", "Sivas", "Yozgat", "Aksaray", "Nevşehir", "Kırıkkale", "Karaman", "Kırşehir", "Niğde", "Çankırı"],
+            "Karadeniz": ["Trabzon", "Samsun", "Rize", "Ordu", "Giresun", "Sinop", "Amasya", "Tokat", "Artvin", "Gümüşhane", "Bayburt", "Kastamonu", "Bartın", "Karabük", "Zonguldak", "Bolu", "Çorum"],
+            "DoguAnadolu": ["Erzurum", "Van", "Malatya", "Elazığ", "Bingöl", "Tunceli", "Erzincan", "Ardahan", "Iğdır", "Kars", "Ağrı", "Muş", "Bitlis", "Hakkari"],
+            "GuneydoguAnadolu": ["Diyarbakır", "Şanlıurfa", "Mardin", "Batman", "Siirt", "Şırnak", "Adıyaman"]
+        };
+
+        // Ülkeler
+        const ulkeler = [
+    "Atina", "Berlin", "Tiflis", "Bakü", "Moskova", "Lefkoşa", "Amsterdam",
+    "Nur-Sultan", "Taşkent", "Aşkabat", "Bişkek", "Duşanbe", "Kabil", 
+    "İslamabad", "Tahran", "Bağdat", "Şam", "Beyrut", "Kahire", "Trablus", 
+    "Tunus", "Cezayir", "Rabat", "Londra", "Paris", "Roma", "Madrid", "Viyana", 
+    "Brüksel", "Stockholm", "Oslo", "Kopenhag", "Helsinki", "Bern", "Sofya", 
+    "Bükreş", "Budapeşte", "Belgrad", "Zagreb", "Ljubljana", "Bratislava", 
+    "Prag", "Varşova", "Kiev", "Kişinev", "Erivan", "Priştine", "Tiran", 
+    "Üsküp", "Saraybosna", "Podgorica", "Valletta", "Lefkoşa", "Tel Aviv", 
+    "Amman", "Riyad", "Kuveyt", "Manama", "Doha", "Abu Dabi", "Maskat", "Sana'a"
+];
+
+
+        const buyukSehirler = [
+            "İstanbul", "Ankara", "İzmir", "Adana", "Bursa",
+            "Gaziantep", "Konya", "Kayseri", "Antalya", "Diyarbakır",
+            "Eskişehir", "Erzurum", "Mersin", "Kocaeli", "Samsun",
+            "Sakarya", "Aydın", "Balıkesir", "Denizli", "Hatay",
+            "Malatya", "Manisa", "Kahramanmaraş", "Mardin", "Muğla",
+            "Ordu", "Tekirdağ", "Trabzon", "Şanlıurfa", "Van"
+        ];
+
+        $(document).ready(function() {
+            let currentDate = null;
+
+            // Önce geçerli tarihi al
+            $.getJSON('/api/current_date', function(data) {
+                currentDate = data.date;
+                // Tarihi aldıktan sonra namaz vakitlerini yükle
+                loadPrayerTimes();
+            }).fail(function(jqXHR, textStatus, errorThrown) {
+                console.error('Tarih bilgisi alınamadı:', textStatus, errorThrown);
+                // Hata durumunda varsayılan tarihle devam et
+                currentDate = '2025-03-01';
+                loadPrayerTimes();
+            });
+
+            function loadPrayerTimes() {
+                // Namaz vakitlerini yükle
+                $.getJSON('/static/namaz_vakitleri.json', function(data) {
+                    // Şehirleri yerleştir
+                    renderCities(data);
+                }).fail(function(jqXHR, textStatus, errorThrown) {
+                    console.error('Namaz vakitleri yüklenemedi:', textStatus, errorThrown);
+                    renderCities({});
+                });
+            }
+
+            function renderCities(namazVakitleri) {
+                const currentLang = localStorage.getItem('preferredLanguage') || 'tr';
+                
+                // En büyük şehirleri yerleştir
+                const buyukSehirlerGrid = $('#buyuk-sehirler-grid').empty();
+                buyukSehirler.forEach(sehir => {
+                    const card = $('<div>')
+                        .addClass('city-card')
+                        .click(function() {
+                            const cityData = namazVakitleri[sehir] || {};
+                            const todayData = cityData[currentDate] || {};
+                            $.ajax({
+                                url: '/api/sehir_kaydet',
+                                method: 'POST',
+                                contentType: 'application/json',
+                                data: JSON.stringify({ 
+                                    sehir: sehir,
+                                    vakitler: todayData
+                                }),
+                                success: function(response) {
+                                    window.location.href = response.redirect;
+                                }
+                            });
+                        });
+
+                    const sehirAdi = $('<div>').addClass('city-name').text(sehir);
+                    card.append(sehirAdi);
+
+                    if (namazVakitleri[sehir] && namazVakitleri[sehir][currentDate]) {
+                        const gunlukVakit = namazVakitleri[sehir][currentDate];
+                        const vakitBilgisi = $('<div>')
+                            .addClass('vakit-bilgisi')
+                            .html(
+                                `<div class="vakit-item"><span class="imsak-label">${translations[currentLang]?.imsak || 'İmsak'}</span><span class="vakit-deger">${gunlukVakit.imsak}</span></div>` +
+                                `<div class="vakit-item"><span class="aksam-label">${translations[currentLang]?.aksam || 'Akşam'}</span><span class="vakit-deger">${gunlukVakit.aksam}</span></div>`
+                            );
+                        card.append(vakitBilgisi);
+                    }
+
+                    buyukSehirlerGrid.append(card);
+                });
+
+                // Şehirleri bölgelere göre yerleştir
+                Object.entries(turkiyeSehirleri).forEach(([bolge, sehirler]) => {
+                    const gridElement = $(`#${bolge}`).empty();
+                    sehirler.forEach(sehir => {
+                        const card = $('<div>')
+                            .addClass('city-card')
+                            .click(function() {
+                                const cityData = namazVakitleri[sehir] || {};
+                                const todayData = cityData[currentDate] || {};
+                                $.ajax({
+                                    url: '/api/sehir_kaydet',
+                                    method: 'POST',
+                                    contentType: 'application/json',
+                                    data: JSON.stringify({ 
+                                        sehir: sehir,
+                                        vakitler: todayData
+                                    }),
+                                    success: function(response) {
+                                        window.location.href = response.redirect;
+                                    }
+                                });
+                            });
+
+                        const sehirAdi = $('<div>').addClass('city-name').text(sehir);
+                        card.append(sehirAdi);
+
+                        if (namazVakitleri[sehir] && namazVakitleri[sehir][currentDate]) {
+                            const gunlukVakit = namazVakitleri[sehir][currentDate];
+                            const vakitBilgisi = $('<div>')
+                                .addClass('vakit-bilgisi')
+                                .html(
+                                    `<div class="vakit-item"><span class="imsak-label">${translations[currentLang]?.imsak || 'İmsak'}</span><span class="vakit-deger">${gunlukVakit.imsak}</span></div>` +
+                                    `<div class="vakit-item"><span class="aksam-label">${translations[currentLang]?.aksam || 'Akşam'}</span><span class="vakit-deger">${gunlukVakit.aksam}</span></div>`
+                                );
+                            card.append(vakitBilgisi);
+                        }
+
+                        gridElement.append(card);
+                    });
+                });
+
+                // Ülkeleri yerleştir
+                const ulkelerGrid = $('#countries-grid').empty();
+                ulkeler.forEach(ulke => {
+                    const card = $('<div>')
+                        .addClass('city-card')
+                        .click(function() {
+                            const countryData = namazVakitleri[ulke] || {};
+                            const todayData = countryData[currentDate] || {};
+                            $.ajax({
+                                url: '/api/ulke_kaydet',
+                                method: 'POST',
+                                contentType: 'application/json',
+                                data: JSON.stringify({ 
+                                    ulke: ulke,
+                                    vakitler: todayData
+                                }),
+                                success: function(response) {
+                                    window.location.href = response.redirect;
+                                }
+                            });
+                        });
+
+                    // Ülke adını çeviriden al
+                    const translatedCountryName = translations[currentLang]?.country_names?.[ulke] || ulke;
+                    const ulkeAdi = $('<div>').addClass('city-name').text(translatedCountryName);
+                    card.append(ulkeAdi);
+
+                    if (namazVakitleri[ulke] && namazVakitleri[ulke][currentDate]) {
+                        const gunlukVakit = namazVakitleri[ulke][currentDate];
+                        const vakitBilgisi = $('<div>')
+                            .addClass('vakit-bilgisi')
+                            .html(
+                                `<div class="vakit-item"><span class="imsak-label">${translations[currentLang]?.imsak || 'İmsak'}</span><span class="vakit-deger">${gunlukVakit.imsak}</span></div>` +
+                                `<div class="vakit-item"><span class="aksam-label">${translations[currentLang]?.aksam || 'Akşam'}</span><span class="vakit-deger">${gunlukVakit.aksam}</span></div>`
+                            );
+                        card.append(vakitBilgisi);
+                    }
+
+                    ulkelerGrid.append(card);
+                });
+            }
+
+            // Kategori değiştirme
+            $('.category-tab').click(function() {
+                $('.category-tab').removeClass('active');
+                $(this).addClass('active');
+                
+                const category = $(this).data('category');
+                $('.category-content').removeClass('active');
+                $(`#${category}`).addClass('active');
+            });
+
+            // Arama kutusu
+            $('.search-box').on('input', function() {
+                const searchText = $(this).val().toLowerCase();
+                
+                // Tüm kartları kontrol et ve göster/gizle
+                $('.city-card').each(function() {
+                    const text = $(this).text().toLowerCase();
+                    $(this).toggle(text.includes(searchText));
+                });
+
+                // Arama yapılıyorsa bölge başlıklarını gizle ve grid boşluklarını düzelt
+                if (searchText.length > 0) {
+                    $('.region-title').addClass('hidden');
+                    $('.city-grid').css('gap', searchText.length > 0 ? '5px' : '15px');
+                    $('.category-content').css('padding', searchText.length > 0 ? '5px' : '10px');
+                } else {
+                    $('.region-title').removeClass('hidden');
+                    $('.city-grid').css('gap', '15px');
+                    $('.category-content').css('padding', '10px');
+                }
+            });
+        });
+
+        let translations = {};
+        let currentLang = localStorage.getItem('preferredLanguage') || 'tr';
+
+        // Çevirileri yükle
+        function loadTranslations() {
+            return $.getJSON('/static/translations.json')
+                .done(function(data) {
+                    translations = data;
+                    changeLanguage(currentLang);
+                })
+                .fail(function(jqXHR, textStatus, errorThrown) {
+                    console.error('Çeviriler yüklenemedi:', textStatus, errorThrown);
+                });
+        }
+
+        // Dil değiştirme fonksiyonu
+        async function changeLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+            localStorage.setItem('preferredLanguage', lang);
+            
+            if (!translations[lang]) return;
+
+            // Başlığı güncelle
+            document.querySelector('h1').textContent = translations[lang]["title"];
+            
+            // Arama kutusunu güncelle
+            document.querySelector('.search-box').placeholder = translations[lang]["search-placeholder"];
+            
+            // Kategori sekmelerini güncelle
+            document.querySelectorAll('.category-tab').forEach(tab => {
+                const category = tab.getAttribute('data-category');
+                const translationKey = `category-tab-${category}`;
+                if (translations[lang][translationKey]) {
+                    tab.textContent = translations[lang][translationKey];
+                }
+            });
+            
+            // Bölge başlıklarını güncelle
+            document.querySelectorAll('.region-title').forEach(title => {
+                const key = title.getAttribute('data-region');
+                if (translations[lang][key]) {
+                    title.textContent = translations[lang][key];
+                }
+            });
+            
+            // Şehir kartlarındaki vakit bilgilerini güncelle
+            const cityCards = document.querySelectorAll('.city-card');
+            cityCards.forEach(card => {
+                const imsakLabel = card.querySelector('.imsak-label');
+                const aksamLabel = card.querySelector('.aksam-label');
+                if (imsakLabel) imsakLabel.textContent = translations[lang]?.imsak || 'İmsak';
+                if (aksamLabel) aksamLabel.textContent = translations[lang]?.aksam || 'Akşam';
+            });
+
+            // Namaz vakitlerini yeniden yükle ve şehirleri yeniden render et
+            await namazVakitleriniYukle();
+            $.getJSON('/static/namaz_vakitleri.json', function(data) {
+                renderCities(data);
+            });
+        }
+
+        // Sayfa yüklendiğinde
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Minimum 5 saniye bekle
+            const minimumWaitTime = new Promise(resolve => setTimeout(resolve, 750));
+            
+            try {
+                // Çevirileri ve namaz vakitlerini paralel olarak yükle
+                const [translationsPromise, prayerTimesPromise] = await Promise.all([
+                    loadTranslations(),
+                    namazVakitleriniYukle()
+                ]);
+
+                // Minimum bekleme süresini bekle
+                await minimumWaitTime;
+
+                // Loading screen'i kaldır
+                const loadingScreen = document.querySelector('.loading-screen');
+                loadingScreen.classList.add('fade-out');
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                }, 300);
+                
+                // Periyodik güncellemeler
+                setInterval(namazVakitleriniYukle, 60000);
+                setInterval(geriSayimlariGuncelle, 1000);
+            } catch (error) {
+                console.error('Yükleme hatası:', error);
+                // Hata durumunda da minimum bekleme süresini bekle
+                await minimumWaitTime;
+                
+                // Loading screen'i kaldır
+                const loadingScreen = document.querySelector('.loading-screen');
+                loadingScreen.classList.add('fade-out');
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                }, 300);
+            }
+        });
+    </script>
+</body>
+</html> 
